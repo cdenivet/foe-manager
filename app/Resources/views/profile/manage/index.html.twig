@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row my-4">
+    <div class="col">
+        <h1 class="mb-4">Compléter le profil</h1>
+
+        {{ form_start(form, { 'attr' : { 'novalidate': 'novalidate' } }) }}
+        <p>
+            {{ form_label(form.adress, 'Adresse :') }}
+            {{ form_widget(form.adress) }}
+        </p>
+        <p>
+            {{ form_label(form.zipCode, 'Code Postal :') }}
+            {{ form_widget(form.zipCode) }}
+        </p>
+        <p>
+            {{ form_label(form.city, 'Ville :') }}
+            {{ form_widget(form.city) }}
+        </p>
+        <p>
+            {{ form_label(form.country, 'Pays :') }}
+            {{ form_widget(form.country) }}
+        </p>
+        <p>
+            <input type="submit" class="btn btn-info" name="submit" value="Valider">
+        </p>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row my-4">
+        <div class="col">
+            <h1 class="mb-4 text-center">{{ 'profile.title-pannel' | trans }}</h1>
+            <p>Bonjour {{ app.user.username }}</p>
+            {#
+                is_granted: tester le role de l'utilisateur ou son état de connexion
+                    IS_AUTHENTICATED_FULLY : connecté
+            #}
+
+        </div>
+    </div>
+{% endblock %}

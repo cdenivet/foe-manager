@@ -1,0 +1,55 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block title %}Ajout/Modification d'un Niveau{% endblock %}
+
+{% block colRight %}
+    {{ form_start(form) }}
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="profile-tab">
+            {#{% dump(form) %}#}
+            <p>
+                {{ form_label(form.gm, 'GM :') }}
+                {{ form_widget(form.gm) }}
+            </p>
+            <p>
+                {{ form_label(form.level, 'Niveau :') }}
+                {{ form_widget(form.level) }}
+            </p>
+            <p>
+                {{ form_label(form.totalPF, 'Total PF :') }}
+                {{ form_widget(form.totalPF) }}
+            </p>
+            <p>
+                {{ form_label(form.rewardP1, 'Récompense P1 :') }}
+                {{ form_widget(form.rewardP1) }}
+            </p>
+            <p>
+                {{ form_label(form.rewardP2, 'Récompense P2 :') }}
+                {{ form_widget(form.rewardP2) }}
+            </p>
+            <p>
+                {{ form_label(form.rewardP3, 'Récompense P3 :') }}
+                {{ form_widget(form.rewardP3) }}
+            </p>
+            <p>
+                {{ form_label(form.rewardP4, 'Récompense P4 :') }}
+                {{ form_widget(form.rewardP4) }}
+            </p>
+            <p>
+                {{ form_label(form.rewardP5, 'Récompense P5 :') }}
+                {{ form_widget(form.rewardP5) }}
+            </p>
+        </div>
+    </div>
+    <input type="submit" name="submit" value="{{ 'btn.validate' | trans }}" class="btn btn-info">
+    <a class="btn btn-danger" href="{{ path('admin.level.index') }}">{{ 'btn.return' | trans }}</a>
+    {{ form_end(form) }}
+        {{ form_errors(form.gm) }}
+        {{ form_errors(form.level) }}
+        {{ form_errors(form.totalPF) }}
+        {{ form_errors(form.rewardP1) }}
+        {{ form_errors(form.rewardP2) }}
+        {{ form_errors(form.rewardP3) }}
+        {{ form_errors(form.rewardP4) }}
+        {{ form_errors(form.rewardP5) }}
+{% endblock %}

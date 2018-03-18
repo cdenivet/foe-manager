@@ -1,0 +1,29 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block colRight %}
+    <h1 class="text-center text-white bg-info rounded">GM</h1>
+    <p>
+        <a href="{{ path('admin.gm.form') }}" class="btn btn-primary">Ajouter</a>
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>Ere</th>
+            <th>Nom</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {#{% dump(results) %}#}
+        {% for result in results %}
+            <tr>
+                <th>{{ result.era.translations[app.request.locale].name }}</th>
+                <th>{{ result.translations[app.request.locale].name }}</th>
+                <th><img src="{{ asset('img/gm/'~result.image) }}" class="img-fluid" alt="" width="100" height="100"></th>
+                <th>{{ result.translations[app.request.locale].description | truncate(30, true) }}</th>
+                <th><a href="{{ path('admin.gm.form.update', { 'ID' : result.id }) }}" class="btn btn-warning">Modifier</a></th>
+                <th><a href="{{ path('admin.gm.delete', { 'ID': result.id }) }}" class="btn btn-danger">Supprimer</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

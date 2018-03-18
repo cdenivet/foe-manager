@@ -1,0 +1,23 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block colRight %}
+    <h1 class="text-center text-white bg-info rounded">Eres</h1>
+    <p>
+        <a href="{{ path('admin.era.form') }}" class="btn btn-primary">Ajouter</a>
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>Nom</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {#{% dump(results) %}#}
+        {% for result in results %}
+            <tr>
+                <th>{{ result.translations[app.request.locale].name }}</th>
+                <th><a href="{{ path('admin.era.form.update', { 'ID' : result.id }) }}" class="btn btn-warning">Modifier</a></th>
+                <th><a href="{{ path('admin.era.delete', { 'ID': result.id }) }}" class="btn btn-danger">Supprimer</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

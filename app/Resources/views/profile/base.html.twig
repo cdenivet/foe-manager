@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row my-4">
+        <div class="col sm-4 my-4">
+            <p>
+                <a href="{{ path('profile.homepage.index') }}" class="btn btn-primary">Accueil</a>
+            </p>
+            <p>
+                <a href="{{ path('profile.manage.index') }}" class="btn btn-primary">Compléter le profil</a>
+            </p>
+        </div>
+        <div class="col sm-8 my-4">
+                {% block colRight %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

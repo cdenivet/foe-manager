@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row my-4">
+        <div class="col">
+            <div class="row">
+                <div class="row my-4">
+                    <div class="col">
+                        <h1 class="mb-4">{{ gm.translations[app.request.locale].name }}</h1>
+                        <div class="row">
+                            <div class="col mb-5">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="{{ asset('img/gm/'~gm.image) }}" class="img-fluid" alt="" width="150" height="150">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <p class="my-1">{{ gm.translations[app.request.locale].description |truncate(100, true) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Niveau</th>
+                            <th>Total PF</th>
+                            <th>Réc P1</th>
+                            <th>Réc P2</th>
+                            <th>Réc P3</th>
+                            <th>Réc P4</th>
+                            <th>Réc P5</th>
+                            <th>Pour P1 P2</th>
+                            <th>Pour P3</th>
+                            <th>Pour P4</th>
+                            <th>Pour P5</th>
+                            <th>Restant</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for niveau in levels %}
+                            <tr>
+                                <td>{{ niveau.level }}</td>
+                                <td>{{ niveau.totalPF }}</td>
+                                <td>{{ niveau.rewardP1 }}</td>
+                                <td>{{ niveau.rewardP2 }}</td>
+                                <td>{{ niveau.rewardP3 }}</td>
+                                <td>{{ niveau.rewardP4 }}</td>
+                                <td>{{ niveau.rewardP5 }}</td>
+                                <td>{{ niveau.totalPF - (2 * 1.9 * niveau.rewardP1) }}</td>
+                                <td>{{ niveau.totalPF - (1.9 * niveau.rewardP1) - (1.9 * niveau.rewardP2) - (2 * 1.9 * niveau.rewardP3) }}</td>
+                                <td>{{ niveau.totalPF - (1.9 * niveau.rewardP1) - (1.9 * niveau.rewardP2) - (1.9 * niveau.rewardP3) - (2 * 1.9 * niveau.rewardP4) }}</td>
+                                <td>
+                                    {% set remainP5 = niveau.totalPF - (1.9 * niveau.rewardP1) - (1.9 * niveau.rewardP2) - (1.9 * niveau.rewardP3) - (1.9 * niveau.rewardP4) - (2 * 1.9 * niveau.rewardP5) %}
+                                    {{ remainP5 }}
+                                </td>
+                                <td>{{ niveau.totalPF - (1.9 * niveau.rewardP1) - (1.9 * niveau.rewardP2) - (1.9 * niveau.rewardP3) - (1.9 * niveau.rewardP4) - (1.9 * niveau.rewardP5) - remainP5 }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

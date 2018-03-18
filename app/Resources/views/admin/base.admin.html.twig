@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <h1 class="mb-4 text-center text-white bg-info rounded">{%  block title %}{{ 'admin.title-pannel' | trans }}{% endblock %}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 my-4">
+            <p class="text-center">
+                <a href="{{ path('admin.homepage.index') }}" class="btn btn-info">Accueil</a>
+            </p>
+            <p class="text-center">
+                <a href="{{ path('admin.user.index') }}" class="btn btn-info">Utilisateurs</a>
+            </p>
+            <p class="text-center">
+                <a href="{{ path('admin.era.index') }}" class="btn btn-info">Eres</a>
+            </p>
+            <p class="text-center">
+                <a href="{{ path('admin.gm.index') }}" class="btn btn-info">GM</a>
+            </p>
+            <p class="text-center">
+                <a href="{{ path('admin.level.index') }}" class="btn btn-info">Niveaux</a>
+            </p>
+        </div>
+        <div class="col-sm-8 my-4">
+                {% block colRight %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

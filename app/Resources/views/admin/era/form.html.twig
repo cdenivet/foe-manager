@@ -1,0 +1,38 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block title %}Ajout/Modification d'une Ere{% endblock %}
+
+{% block colRight %}
+    {{ form_start(form) }}
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        {% for locale in locales %}
+            <li class="nav-item">
+                {% if(locale == app.request.locale) %}
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#{{ locale }}" role="tab" aria-controls="home" aria-selected="true">{{ locale | upper }}</a>
+                {% else %}
+                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ locale }}" role="tab" aria-controls="home" aria-selected="true">{{ locale | upper }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        {% for locale in locales %}
+            {% if(locale == 'fr') %}
+                <div class="tab-pane fade show active" id="{{ locale }}" role="tabpanel" aria-labelledby="profile-tab">
+            {% else %}
+                <div class="tab-pane fade" id="{{ locale }}" role="tabpanel" aria-labelledby="profile-tab">
+            {% endif %}
+                <p>
+                    {{ form_label( attribute(form, 'name_' ~ locale), 'Nom :') }}
+                    {{ form_widget(attribute(form, 'name_' ~ locale)) }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <input type="submit" name="submit" value="{{ 'btn.validate' | trans }}" class="btn btn-info">
+    <a class="btn btn-danger" href="{{ path('admin.era.index') }}">{{ 'btn.return' | trans }}</a>
+    {{ form_end(form) }}
+    {% for locale in locales %}
+        {{ form_errors(attribute(form, 'name_' ~ locale)) }}
+    {% endfor %}
+{% endblock %}

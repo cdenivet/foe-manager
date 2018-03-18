@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row my-4">
+        <div class="col">
+            <h1 class="mb-4">{{ era.name }}</h1>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col">
+            <div class="row">
+                {% for gm in gms %}
+                    <div class="col-sm-4 mb-5">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="{{ asset('img/gm/'~gm.image) }}" class="img-fluid" alt="" width="100" height="100">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3>{{ gm.name }}</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="my-1">{{ gm.description |truncate(100, true) }}</p>
+                                <p>
+                                    <a href="{{ path('gm.index', { 'slugGm' : gm.slug }) }}" class="btn btn-primary">
+                                        <span class="fas fa-eye"></span>
+                                        Consulter
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+.invalid-feedback{
+    display: block;
+}
+
+nav {
+    background-color: #222;
+}
+.navbar {
+    padding: 0 15%;
+}

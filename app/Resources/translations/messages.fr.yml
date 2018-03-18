@@ -1,0 +1,29 @@
+Category: Catégorie
+Langage: Langue
+French: Français
+English: Anglais
+login: Identifiant
+password: 'Mot de passe'
+email: Email
+flash_message.new_user: 'Votre compte a été créé !'
+flash_message.password_token_send: 'Vous allez recevoir un email pour changer votre mot de passe'
+flash_message.password_token_already_sent: 'Vous avez déjà demandé à réinitialiser votre mot de passe. Vérifiez vos emails !'
+flash_message.profile.completed: 'Votre profil a été complété !'
+btn.validate: Valider
+btn.return: Retour
+signUp.title: 'Créer un compte'
+signIn.title: Connexion
+passwordForgot.title: 'Mot de passe oublié'
+enter.login: 'Saisissez votre pseudo'
+enter.password: 'Saisissez votre mot de passe'
+enter.email: 'Saisissez votre email'
+enter.admin.category.name_fr: 'Saisissez un nom (FR)'
+enter.admin.category.name_en: 'Saisissez un nom (EN)'
+enter.admin.category.description_fr: 'Saisissez une description (FR)'
+enter.admin.category.description_en: 'Saisissez une description (EN)'
+admin.title-pannel: 'Tableau de bord'
+admin.category.name_fr: 'Nom (FR)'
+admin.category.name_en: 'Nom (EN)'
+admin.category.description_fr: 'Description (FR)'
+admin.category.description_en: 'Description (EN)'
+profile.title-pannel: 'Mon compte'

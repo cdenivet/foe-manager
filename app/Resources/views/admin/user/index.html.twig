@@ -1,0 +1,35 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block colRight %}
+    <h1 class="text-center text-white bg-info rounded">Utilisateurs</h1>
+    <p>
+        <a href="{{ path('admin.era.form') }}" class="btn btn-primary">Ajouter</a>
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Activé</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {#{% dump(results) %}#}
+        {% for result in results %}
+            <tr>
+                <th>{{ result.username }}</th>
+                <th>{{ result.email }}</th>
+                {% if result.isActive == 1 %}
+                    <th><button type="button" class="btn btn-success" name="desactivateUser" data-id="{{ result.id }}">Oui</button></th>
+                {% else %}
+                    <th><button type="button" class="btn btn-danger" name="activateUser" data-id="{{ result.id }}">Non</button></th>
+                {% endif %}
+                <th><a href="{{ path('admin.user.form.update', { 'ID' : result.id }) }}" class="btn btn-warning">Modifier</a></th>
+                <th><a href="{{ path('admin.user.delete', { 'ID': result.id }) }}" class="btn btn-danger">Supprimer</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin/user.js') }}"></script>
+{% endblock %}

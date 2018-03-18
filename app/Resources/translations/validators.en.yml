@@ -1,0 +1,17 @@
+username:
+    notblank: Username is empty
+    regex: Username is not valid
+password:
+    notblank: Password is empty
+email:
+    notblank: Email is empty
+    incorrect: Email is not valid
+adress:
+    notblank: Adress is empty
+zipCode:
+    notblank: ZipCode is empty
+city:
+    notblank: City is empty
+country:
+    notblank: Country is empty
+    placeholder: Select your country

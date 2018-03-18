@@ -1,0 +1,37 @@
+{% extends 'admin/base.admin.html.twig' %}
+
+{% block colRight %}
+    <h1 class="text-center text-white bg-info rounded">Niveaux</h1>
+    <p>
+        <a href="{{ path('admin.level.form') }}" class="btn btn-primary">Ajouter</a>
+    </p>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>GM</th>
+            <th>Niveau</th>
+            <th>Total PF</th>
+            <th>Réc P1</th>
+            <th>Réc P2</th>
+            <th>Réc P3</th>
+            <th>Réc P4</th>
+            <th>Réc P5</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {#{% dump(results) %}#}
+        {% for result in results %}
+            <tr>
+                <th>{{ result.gm.translations[app.request.locale].name }}</th>
+                <th>{{ result.level }}</th>
+                <th>{{ result.totalPF }}</th>
+                <th>{{ result.rewardP1 }}</th>
+                <th>{{ result.rewardP2 }}</th>
+                <th>{{ result.rewardP3 }}</th>
+                <th>{{ result.rewardP4 }}</th>
+                <th>{{ result.rewardP5 }}</th>
+                <th><a href="{{ path('admin.level.form.update', { 'ID' : result.id }) }}" class="btn btn-warning">Modifier</a></th>
+                <th><a href="{{ path('admin.level.delete', { 'ID': result.id }) }}" class="btn btn-danger">Supprimer</a></th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

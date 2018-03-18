@@ -1,0 +1,49 @@
+Category: Catégorie
+Langage: Langue
+French: Français
+English: Anglais
+
+flash_message:
+    new_user: Votre compte a été créé !
+    password_token_send: Vous allez recevoir un email pour changer votre mot de passe
+    password_token_already_sent: Vous avez déjà demandé à réinitialiser votre mot de passe. Vérifiez vos emails !
+    profile.completed: Votre profil a été complété !
+
+login: Identifiant
+password: Mot de passe
+email: Email
+
+btn:
+    validate: Valider
+    return: Retour
+
+signUp:
+    title: Créer un compte
+
+signIn:
+    title: Connexion
+
+passwordForgot:
+    title: Mot de passe oublié
+
+enter:
+    login: Saisissez votre pseudo
+    password: Saisissez votre mot de passe
+    email: Saisissez votre email
+    admin:
+        category:
+            name_fr: Saisissez un nom (FR)
+            name_en: Saisissez un nom (EN)
+            description_fr: Saisissez une description (FR)
+            description_en: Saisissez une description (EN)
+
+admin:
+    title-pannel: Tableau de bord
+    category:
+        name_fr: Nom (FR)
+        name_en: Nom (EN)
+        description_fr: Description (FR)
+        description_en: Description (EN)
+
+profile:
+    title-pannel: Mon compte

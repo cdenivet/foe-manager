@@ -1,0 +1,48 @@
+Category: Category
+Langage: Language
+French: French
+English: English
+
+flash_message:
+    new_user: Your account has been created !
+    password_token_send: You will receive an email to change your password
+    password_token_already_sent: You have already ask to reset your password in last 24 hours. Check your emails !
+
+login: Login
+password: Password
+email: Email
+
+btn:
+    validate: Validate
+    return: Return
+
+signUp:
+    title: Create an account
+
+signIn:
+    title: Connection
+
+passwordForgot:
+    title: Password forgotten
+
+enter:
+    login: Enter your login
+    password: Enter your password
+    email: Enter your email
+    admin:
+        category:
+            name_fr: Enter a name (FR)
+            name_en: Enter a name (EN)
+            description_fr: Enter a description (FR)
+            description_en: Enter a description (EN)
+
+admin:
+    title-pannel: Administration pannel
+    category:
+        name_fr: Name (FR)
+        name_en: Name (EN)
+        description_fr: Description (FR)
+        description_en: Description (EN)
+
+profile:
+    title-pannel: My account
