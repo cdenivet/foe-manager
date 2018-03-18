@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller\Admin;
 
-use AppBundle\Entity\Gm;
 use AppBundle\Entity\Level;
 use AppBundle\Form\LevelType;
 use Doctrine\Common\Persistence\ManagerRegistry;

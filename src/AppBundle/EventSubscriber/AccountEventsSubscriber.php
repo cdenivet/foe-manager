@@ -6,7 +6,7 @@ use AppBundle\Entity\User;
 use AppBundle\Entity\UserToken;
 use AppBundle\Event\AccountCreateEvent;
 use AppBundle\Event\AccountEvents;
-use AppBundle\Events\AccountForgotPasswordEvent;
+use AppBundle\Event\AccountForgotPasswordEvent;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
