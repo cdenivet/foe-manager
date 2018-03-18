@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -70,3 +71,7 @@ Enjoy!
 [11]: https://symfony.com/doc/3.4/logging.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+=======
+# foe-manager
+FoE-Manager
+>>>>>>> f8e46db2b479bb0cd2ac3f1a4be295893b938217
